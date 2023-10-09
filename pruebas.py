@@ -1,33 +1,25 @@
-'''cont = 1
-cont_prim = 0
-num = int(input("ingrese un numero: "))
+num = int(input("ingrese un número a validar: "))
+cont = 1
+cont2 = 0
+temp = ""
+res = 0
+while cont < (num+1):
+    val = list(str(cont))
 
-while num >= cont:
-    if num % cont == 0:
-        cont_prim += 1
-    print(cont_prim)
+    if len(val) >= 2:
+        ordenado = True
+        for i in range(len(val)-1):
+            if int(val[i]) > int(val[i+1]):
+                ordenado = False
+                break
+        if ordenado:
+            cont2 = cont
+    else:
+        res = cont
     cont += 1
-
-if cont_prim > 2:
-    print("el numero",num,"no es primo")
+if len(val) >= 2:
+    print(cont2)
 else:
-    print("el numero",num,"numero primo")'''
+    print(res)
 
-print("Imprimir los primeros 10 números primos usando un bucle while")
-cant_prim = 0
-num = 1        
-while cant_prim < 10:
-    
-    cont = 1
-    cont_prim = 0
 
-    while num >= cont:
-        if num % cont == 0:
-            cont_prim += 1
-        cont += 1
-    
-    if cont_prim <= 2:
-        print(num)
-        cant_prim +=1
-    
-    num += 1
